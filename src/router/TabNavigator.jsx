@@ -1,22 +1,29 @@
 import React from "react";
 
+// React Native
+import { Image } from "react-native";
+
 // React Navigation
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import StackNavigator from "./StackNavigator";
 
 // Daditos Icons
-import HomeIcon from "../../assets/icons/home.png";
-import DiscoverIcon from "../../assets/icons/discover.png";
-import DiceBagIcon from "../../assets/icons/diceBag.png";
-import CampaignProfileIcon from "../../assets/icons/campaignProfile.png";
-import ProfileIcon from "../../assets/icons/profile.png";
+// import HomeIcon from "../../assets/icons/home.png";
+// import DiscoverIcon from "../../assets/icons/discover.png";
+// import DiceBagIcon from "../../assets/icons/diceBag.png";
+// import CampaignProfileIcon from "../../assets/icons/campaignProfile.png";
+// import ProfileIcon from "../../assets/icons/profile.png";
 
-// Expo Icons
-import { FontAwesome } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
+// SVG Icons
+import HomeIconSVG from "../../assets/icons/homeIcon.svg";
+import DiscoverIconSVG from "../../assets/icons/discoverIcon.svg";
+import DiceBagIconSVG from "../../assets/icons/diceBagIcon.svg";
+import CampaignProfileIconSVG from "../../assets/icons/campaignProfileIcon.svg";
+import ProfileIconSVG from "../../assets/icons/profileIcon.svg";
+
+// Components
+import StackNavigator from "./StackNavigator";
 import DiscoverScreen from "../components/screens/discoverScreen/DiscoverScreen";
 import DiceBagScreen from "../components/screens/diceBagScreen/DiceBagScreen";
-import { Image } from "react-native";
 import CampaignProfileScreen from "../components/screens/cpProfileScreen/CampaignProfileScreen";
 import ProfileScreen from "../components/screens/profileScreen/ProfileScreen";
 
@@ -34,10 +41,12 @@ const TabNavigator = () => {
         tabBarActiveTintColor: "#6741D9",
         tabBarStyle: {
           position: "absolute",
-          paddingTop: 10,
-          // paddingBottom: 10,
+          marginInline: 30,
+          marginBottom: 30,
+          borderRadius: 20,
+          padding: 20,
           borderWidth: 0,
-          elevation: 0,
+          elevation: 3,
           height: 60,
         },
       }}
@@ -47,11 +56,11 @@ const TabNavigator = () => {
         component={StackNavigator}
         options={{
           tabBarLabel: "Home",
+          tabBarIconStyle: {
+            marginTop: 10,
+          },
           tabBarIcon: ({ color }) => (
-            <Image
-              source={HomeIcon}
-              style={{ width: 40, height: 40, tintColor: color }}
-            />
+            <HomeIconSVG width={50} height={50} fill={color} />
           ),
         }}
       />
@@ -60,11 +69,11 @@ const TabNavigator = () => {
         component={DiscoverScreen}
         options={{
           tabBarLabel: "Discover",
+          tabBarIconStyle: {
+            marginTop: 10,
+          },
           tabBarIcon: ({ color }) => (
-            <Image
-              source={DiscoverIcon}
-              style={{ width: 40, height: 40, tintColor: color }}
-            />
+            <DiscoverIconSVG width={50} height={50} fill={color} />
           ),
         }}
       />
@@ -73,11 +82,12 @@ const TabNavigator = () => {
         component={CampaignProfileScreen}
         options={{
           tabBarLabel: "Campaign",
+          tabBarActiveBackgroundColor: "#6741D9",
+          tabBarIconStyle: {
+            marginTop: 10,
+          },
           tabBarIcon: ({ color }) => (
-            <Image
-              source={CampaignProfileIcon}
-              style={{ width: 40, height: 40, tintColor: color }}
-            />
+            <CampaignProfileIconSVG width={50} height={50} fill={color} />
           ),
         }}
       />
@@ -86,11 +96,11 @@ const TabNavigator = () => {
         component={DiceBagScreen}
         options={{
           tabBarLabel: "Dice Bag",
+          tabBarIconStyle: {
+            marginTop: 10,
+          },
           tabBarIcon: ({ color }) => (
-            <Image
-              source={DiceBagIcon}
-              style={{ width: 40, height: 40, tintColor: color }}
-            />
+            <DiceBagIconSVG width={50} height={50} fill={color} />
           ),
         }}
       />
@@ -99,11 +109,11 @@ const TabNavigator = () => {
         component={ProfileScreen}
         options={{
           tabBarLabel: "Profile",
+          tabBarIconStyle: {
+            marginTop: 10,
+          },
           tabBarIcon: ({ color }) => (
-            <Image
-              source={ProfileIcon}
-              style={{ width: 40, height: 40, tintColor: color }}
-            />
+            <ProfileIconSVG width={50} height={50} fill={color} />
           ),
         }}
       />
